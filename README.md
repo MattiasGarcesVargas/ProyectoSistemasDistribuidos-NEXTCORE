@@ -149,7 +149,7 @@ docker ps
 ## Paso 3 – Levantar Servicio de Reportes (Máquina 3)
 
 ```
-cd servicio-reportes
+cd reportes
 docker compose up -d --build
 ```
 
@@ -197,10 +197,21 @@ http://100.84.96.30:8081/health
 # 7. Evidencias Recomendadas
 
 - Captura Tailscale mostrando 3 máquinas conectadas
+  <img width="1919" height="1021" alt="image" src="https://github.com/user-attachments/assets/f2e4ca47-fc94-4c91-a42d-b435f817d492" />
 - Captura pgAdmin con tablas
+  <img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/4883a5d6-e065-4d06-9154-3587730833c4" />
+  <img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/ab675d1c-60c9-49c1-8a68-863378258559" />
+  <img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/bf1b71e1-bed4-4852-aadc-1f59ea9efef1" />
+  <img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/c6410066-dfb9-4dc9-9fd4-c01c8c73167b" />
 - Captura App Web funcionando
+  ![WhatsApp Image 2026-02-22 at 21 40 58](https://github.com/user-attachments/assets/06a39e77-63c0-4e94-955f-b284bc761278)
+  ![WhatsApp Image 2026-02-22 at 21 41 15](https://github.com/user-attachments/assets/95c3614b-bed0-4a25-9dd0-88cafcfa086a)
+  ![WhatsApp Image 2026-02-22 at 21 41 35](https://github.com/user-attachments/assets/a2e5beb5-7ffb-4d9b-817a-5e75bd4d4a99)
+  ![WhatsApp Image 2026-02-22 at 21 41 47](https://github.com/user-attachments/assets/fabd33cd-623b-4b31-8044-2cf8481918b2)
+  ![WhatsApp Image 2026-02-22 at 21 42 03](https://github.com/user-attachments/assets/da9d1db1-c6b0-4d41-a6cb-89a4f8028c55)
+  ![WhatsApp Image 2026-02-22 at 21 43 39](https://github.com/user-attachments/assets/d559d51e-5cf3-42d8-8734-992000f3245a)
 - Captura Reportes generados
-
+  ![WhatsApp Image 2026-02-22 at 21 42 29](https://github.com/user-attachments/assets/a3380c84-5777-40bc-8bc4-e869d13d8282)
 ---
 
 # 8. Responsables
