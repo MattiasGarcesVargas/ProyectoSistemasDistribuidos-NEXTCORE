@@ -1,8 +1,0 @@
-services:
-  reportes:
-    build: .
-    restart: always
-    env_file:
-      - .env
-    ports:
-      - "8081:8081"
