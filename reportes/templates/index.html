@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Inicio — Reportes Inventario{% endblock %}
+{% block content %}
+<h2 style="font-size:1.5rem; margin-bottom:24px;">Reportes Disponibles</h2>
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+
+  <a href="/reportes/stock-bajo" style="text-decoration:none;">
+    <div class="card" style="padding:24px; border-top:4px solid #EF4444; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:2.5rem; margin-bottom:12px;">🚨</div>
+      <h3 style="color:#1E293B; margin-bottom:8px;">Productos con Stock Bajo</h3>
+      <p style="color:#64748B; font-size:0.875rem;">Lista de productos cuyo stock actual es menor o igual al stock mínimo, ordenados por urgencia.</p>
+    </div>
+  </a>
+
+  <a href="/reportes/mas-movidos" style="text-decoration:none;">
+    <div class="card" style="padding:24px; border-top:4px solid #F59E0B; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:2.5rem; margin-bottom:12px;">📊</div>
+      <h3 style="color:#1E293B; margin-bottom:8px;">Productos Más Movidos</h3>
+      <p style="color:#64748B; font-size:0.875rem;">Top 10 de productos con más salidas en un rango de fechas dado.</p>
+    </div>
+  </a>
+
+  <a href="/reportes/valor-inventario" style="text-decoration:none;">
+    <div class="card" style="padding:24px; border-top:4px solid #10B981; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:2.5rem; margin-bottom:12px;">💰</div>
+      <h3 style="color:#1E293B; margin-bottom:8px;">Valor Total del Inventario</h3>
+      <p style="color:#64748B; font-size:0.875rem;">Valor total por categoría: precio unitario × stock actual de todos los productos.</p>
+    </div>
+  </a>
+
+  <a href="/reportes/movimientos" style="text-decoration:none;">
+    <div class="card" style="padding:24px; border-top:4px solid #6366F1; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:2.5rem; margin-bottom:12px;">📋</div>
+      <h3 style="color:#1E293B; margin-bottom:8px;">Movimientos por Fecha</h3>
+      <p style="color:#64748B; font-size:0.875rem;">Entradas y salidas filtradas por rango de fechas con totales.</p>
+    </div>
+  </a>
+
+  <a href="/reportes/proveedores" style="text-decoration:none;">
+    <div class="card" style="padding:24px; border-top:4px solid #2563EB; cursor:pointer; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+      <div style="font-size:2.5rem; margin-bottom:12px;">🏭</div>
+      <h3 style="color:#1E293B; margin-bottom:8px;">Resumen por Proveedor</h3>
+      <p style="color:#64748B; font-size:0.875rem;">Cantidad de productos y valor de inventario agrupado por proveedor.</p>
+    </div>
+  </a>
+
+</div>
+<div style="margin-top:32px; padding:16px; background:#DBEAFE; border-radius:8px; font-size:0.875rem; color:#1D4ED8;">
+  <strong>API REST disponible:</strong> Todos los reportes tienen endpoints JSON/CSV/PDF. Consulta <a href="/docs" style="color:#1D4ED8;">/docs</a> para ver la documentación completa.
+</div>
+{% endblock %}

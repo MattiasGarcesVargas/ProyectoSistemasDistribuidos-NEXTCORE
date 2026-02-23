@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Más Movidos — Reportes{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <div>
+      <h2>📊 Top 10 Productos Más Movidos</h2>
+      <p style="color:#64748B; font-size:0.85rem; margin-top:4px;">Período: {{ fecha_inicio }} → {{ fecha_fin }}</p>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+      <form method="get" class="filters">
+        <label>Desde <input type="date" name="fecha_inicio" value="{{ fecha_inicio }}"></label>
+        <label>Hasta <input type="date" name="fecha_fin" value="{{ fecha_fin }}"></label>
+        <button type="submit" class="btn btn-blue">Filtrar</button>
+      </form>
+      <a href="/reportes/mas-movidos/csv?fecha_inicio={{ fecha_inicio }}&fecha_fin={{ fecha_fin }}" class="btn btn-csv">⬇ CSV</a>
+      <a href="/reportes/mas-movidos/pdf?fecha_inicio={{ fecha_inicio }}&fecha_fin={{ fecha_fin }}" class="btn btn-pdf">⬇ PDF</a>
+    </div>
+  </div>
+  <div class="card-body" style="padding:0;">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Producto</th><th>Categoría</th><th>Total Salidas</th><th># Movimientos</th></tr>
+      </thead>
+      <tbody>
+      {% for r in datos %}
+        <tr>
+          {% if loop.index <= 3 %}
+          <td style="text-align:center; font-weight:700; color:#F59E0B;">
+          {% else %}
+          <td style="text-align:center; font-weight:700; color:#64748B;">
+          {% endif %}
+            {% if loop.index == 1 %}🥇{% elif loop.index == 2 %}🥈{% elif loop.index == 3 %}🥉{% else %}{{ loop.index }}{% endif %}
+          </td>
+          <td><strong>{{ r.nombre }}</strong></td>
+          <td>{{ r.categoria or '—' }}</td>
+          <td style="text-align:center; font-weight:700; color:#2563EB; font-size:1.1rem;">{{ r.total_salidas }}</td>
+          <td style="text-align:center;">{{ r.num_movimientos }}</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5" style="text-align:center; padding:32px; color:#94A3B8;">Sin datos para el período seleccionado.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
