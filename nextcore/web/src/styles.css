@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* ── Dark theme base ── */
+:root {
+  --bg-base: #0b1120;
+  --bg-card: #111a2e;
+  --bg-card-alt: #0f1729;
+  --border: rgba(148, 163, 184, 0.08);
+  --cyan: #22d3ee;
+}
+
+html { background: var(--bg-base); }
+body { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg-base); color: #e2e8f0; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+
+/* glow effect for active sidebar item */
+.glow { box-shadow: 0 0 12px rgba(34, 211, 238, 0.15); }
+
+/* stock bar */
+.stock-bar { height: 3px; border-radius: 2px; margin-top: 4px; }
+
+/* table top accent */
+.table-accent { border-top: 2px solid var(--cyan); }
+
+/* select dark styling */
+select option { background: #111a2e; color: #e2e8f0; }

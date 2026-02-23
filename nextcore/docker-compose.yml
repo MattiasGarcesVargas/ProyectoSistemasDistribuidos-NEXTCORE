@@ -1,0 +1,21 @@
+services:
+  nextcore_appweb:
+    container_name: nextcore_appweb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REPORT_SERVICE_URL=${REPORT_SERVICE_URL}
+    ports:
+      # En tu máquina local Tomcat ocupa el 8080; al desplegar en Máquina 1 cambia a "8080:8080"
+      - "8080:8080"
+    restart: unless-stopped

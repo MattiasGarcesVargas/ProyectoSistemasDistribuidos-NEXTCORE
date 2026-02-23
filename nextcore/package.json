@@ -1,0 +1,11 @@
+{
+  "name": "nextcore-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:web": "cd web && npm run dev",
+    "dev:server": "cd server && npm start",
+    "install:all": "cd server && npm install && cd ../web && npm install",
+    "dev": "cd web && npm run dev"
+  }
+}
