@@ -189,7 +189,7 @@ TcpTestSucceeded : True
 ## Verificar Servicio de Reportes
 
 ```
-http://100.84.96.30:8081/health
+http://100.84.96.30:8081
 ```
 
 ---
